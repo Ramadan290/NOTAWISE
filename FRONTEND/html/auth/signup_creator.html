@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign Up – NotaWise</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/frontend/css/styles.css" />
+</head>
+<body>
+
+  <div class="auth-container small">
+    <form class="auth-form" id="signup-form">
+      <h2>Sign Up</h2>
+      <p>Already have an account? <a href="/frontend/html/auth/login.html">Login</a></p>
+
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="Choose a username" required />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="you@organization.edu" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter a secure password" required />
+
+      <label for="confirm-password">Confirm Password</label>
+      <input type="password" id="confirm-password" name="confirm-password" placeholder="Enter the same password" required />
+
+      <!-- Hidden role field -->
+      <input type="hidden" id="role" name="role" value="creator" />
+
+      <button type="submit">Sign Up</button>
+
+      <p id="signup-message"></p>
+
+      <!-- Optional social login -->
+      <div class="social-login">
+        <p>or sign up with</p>
+        <div class="social-btns">
+          <button type="button">
+            <img src="/frontend/assets/google.png" alt="Google" class="social-icon" />
+            Google
+          </button>
+          <button type="button">
+            <img src="/frontend/assets/facebook.png" alt="Facebook" class="social-icon" />
+            Facebook
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <script src="/frontend/js/auth/signup_creator.js"></script>
+</body>
+</html>

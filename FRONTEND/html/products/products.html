@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Products - NotaWise</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/frontend/css/styles_products.css" />
+</head>
+<body>
+
+
+  
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <button id="menu-toggle">☰</button>
+    </div>
+    <div class="nav-center">
+    <h2 id="page-title" class="page-title">Products</h2>
+    </div>
+    <div class="nav-right">
+      <button id="cart-btn" onclick="window.location.href='/frontend/html/orders/orders.html'">🛒</button>
+    </div>
+  </nav>
+
+  <!-- Sidebar (hidden by default) -->
+  <aside class="sidebar hidden" id="filter-sidebar">
+    <h3>Filter Products</h3>
+
+    <label for="filter-name">Name</label>
+    <input type="text" id="filter-name" placeholder="Search by name" />
+
+    <label for="filter-category">Category</label>
+    <select id="filter-category">
+      <option value="">All</option>
+      <!-- Categories loaded dynamically -->
+    </select>
+
+    <label for="filter-price-min">Min Price: <span id="min-price-label">0</span></label>
+    <input type="range" id="filter-price-min" min="0" max="500" step="1" value="0" />
+
+    <label for="filter-price-max">Max Price: <span id="max-price-label">500</span></label>
+    <input type="range" id="filter-price-max" min="0" max="500" step="1" value="500" />
+
+    <button class="filter-btn" id="apply-filters">Apply Filters</button>
+    <button class="filter-btn reset" id="reset-filters">Reset</button>
+  </aside>
+
+  <main class="product-grid" id="product-list">
+  </main>
+
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <p id="modal-message">Placeholder</p>
+      <div class="modal-buttons">
+        <button id="modal-continue" class="modal-btn secondary">Continue Shopping</button>
+        <button id="modal-cart" class="modal-btn primary">Go to Cart</button>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="/frontend/js/products/products.js"></script>
+
+</body>
+</html>

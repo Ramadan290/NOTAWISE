@@ -1,0 +1,8 @@
+# 1. Move into your backend project folder
+cd C:\NOTAWISE\BACKEND
+
+# 2. Activate virtual environment
+.\venv\Scripts\activate
+
+# 3. Start FastAPI server
+uvicorn main:app --reload

@@ -1,0 +1,392 @@
+/* === Navbar === */
+/* === Navbar (Sticky Full-Width) === */
+.navbar {
+  background-color: #7b1fa2;
+  padding: 12px 0;
+  width: 100%;
+  position: fixed; /* 👈 stick to top */
+  top: 0;
+  left: 0;
+  z-index: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.nav-right {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#cart-btn {
+  background-color: #ffffff22;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+#cart-btn:hover {
+  background-color: #ffffff33;
+}
+
+/* === Account for sticky navbar height in layout === */
+body {
+  padding-top: 72px; /* Adjust if navbar height changes */
+}
+
+
+.nav-left {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#menu-toggle {
+  background: none;
+  color: white;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+/* === Sidebar Container === */
+.sidebar {
+  position:fixed;
+  top: 72px;
+  left: 0;
+  width: 240px;
+  background-color: #f8f6fc;
+  height: calc(100% - 72px);
+  padding: 20px 16px;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.sidebar.hidden {
+  transform: translateX(-100%);
+}
+
+/* === Sidebar Heading === */
+.sidebar h3 {
+  color: #4a148c;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* === Labels === */
+.sidebar label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* === Inputs & Selects === */
+.sidebar input,
+.sidebar select {
+  width: 200px;
+  padding: 8px 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sidebar input:focus,
+.sidebar select:focus {
+  outline: none;
+  border-color: #7b1fa2;
+  box-shadow: 0 0 4px rgba(123, 31, 162, 0.3);
+}
+
+/* === Range Inputs === */
+.sidebar input[type="range"] {
+  appearance: none;
+  width: 200px;
+  height: 6px;
+  background: #d1c4e9;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.sidebar input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #7b1fa2;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.sidebar input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #7b1fa2;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* === Filter Buttons === */
+.filter-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.filter-btn:hover {
+  transform: scale(1.02);
+}
+
+.filter-btn#apply-filters {
+  background-color: #7b1fa2;
+  color: white;
+}
+
+.filter-btn#apply-filters:hover {
+  background-color: #6a1b9a;
+}
+
+.filter-btn.reset {
+  background-color: #f3e5f5;
+  color: #4a148c;
+}
+
+.filter-btn.reset:hover {
+  background-color: #e1bee7;
+}
+
+/* === Product Grid === */
+.product-grid {
+  padding: 32px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+/* === Product Card === */
+.product-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(123, 31, 162, 0.2);
+}
+
+/* === Product Image === */
+.product-image {
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* === Product Details === */
+.product-details h4 {
+  color: #4a148c;
+  margin: 0 0 6px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.product-details p {
+  color: #444;
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+/* === Product Actions === */
+.product-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* === Download Button === */
+.download-btn {
+  display: inline-block;
+  font-size: 13px;
+  padding: 8px 12px;
+  background-color: #ede7f6;
+  color: #4a148c;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.download-btn:hover {
+  background-color: #d1c4e9;
+  transform: scale(1.05);
+}
+
+/* === Add to Cart Button === */
+.add-to-cart-btn {
+  flex: 1;
+  background-color: #7b1fa2;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #6a1b9a;
+  transform: scale(1.03);
+}
+
+
+.page-title {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 16px;
+  font-size: 24px;
+}
+
+
+
+/* === Modal === */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(123, 31, 162, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  padding: 24px 32px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 300px;
+}
+
+#modal-message {
+  color: #4a148c;
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.modal-close-btn {
+  background-color: #7b1fa2;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  background-color: #6a1b9a;
+}
+
+
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.modal-btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.modal-btn.primary {
+  background-color: #7b1fa2;
+  color: white;
+}
+
+.modal-btn.primary:hover {
+  background-color: #6a1b9a;
+}
+
+.modal-btn.secondary {
+  background-color: #f3e5f5;
+  color: #7b1fa2;
+  border: 1px solid #d1a3e6;
+}
+
+.modal-btn.secondary:hover {
+  background-color: #e1bee7;
+}
+
+.description-box {
+  background-color: #f8f6fc;
+  border: 1px solid #e0cfe6;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 12px 0;
+  font-size: 14px;
+  color: #444;
+  line-height: 1.5;
+  box-shadow: inset 0 1px 4px rgba(123, 31, 162, 0.05);
+}
+

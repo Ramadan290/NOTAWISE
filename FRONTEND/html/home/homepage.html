@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NotaWise - Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/frontend/css/styles_homepage.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">NotaWise</div>
+    <div class="nav-right">
+      <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Search for Organization..." />
+      </div>
+      <button class="cart-btn" onclick="window.location.href='/frontend/html/orders/orders.html'">
+        🛒 Cart
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="main-container">
+    <h2>Choose an Organization</h2>
+    <div id="organization-list">
+      <!-- Organization boxes will be injected here via JS -->
+    </div>
+
+  </div>
+      <!-- Creator Button -->
+  <a href="#" id="creator-dashboard-link" class="creator-btn">
+    Creator Dashboard
+  </a>
+
+
+  <div id="creator-modal" class="modal hidden">
+  <div class="modal-content">
+    <p>Are you a creator? Sign up as a creator to access the dashboard.</p>
+    <div class="modal-buttons">
+      <button class="modal-btn confirm" id="creator-signup">Sign Up</button>
+      <button class="modal-btn cancel" id="creator-cancel">Cancel</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Pending Approval Modal -->
+<div id="pending-modal" class="modal hidden">
+  <div class="modal-content">
+    <p style="color: #4a148c; font-weight: 500;">
+      Your request to become a creator is awaiting admin approval.
+    </p>
+    <div class="modal-buttons">
+      <button id="pending-ok" class="modal-btn confirm">OK</button>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/frontend/js/home/homepage.js"></script>
+</body>
+</html>

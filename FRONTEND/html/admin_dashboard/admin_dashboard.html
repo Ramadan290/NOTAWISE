@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="/frontend/css/styles_admin_dashboard.css">
+</head>
+<body>
+
+  <h1>Welcome, Admin!</h1>
+
+  <input type="text" id="search" placeholder="Search by username..." oninput="filterUsers()" />
+<select id="roleFilter" onchange="filterUsers()">
+  <option value="">All Roles</option>
+  <option value="student">Student</option>
+  <option value="creator">Creator</option>
+  <option value="admin">Admin</option>
+</select>
+
+<select id="orgFilter" onchange="filterUsers()">
+  <option value="">All Organizations</option>
+  <!-- Org IDs will be added dynamically -->
+</select>
+
+  <h2>All Users</h2>
+  <div id="user-list"></div>
+
+<!-- Confirmation Modal -->
+<div id="confirm-modal" class="modal hidden">
+  <div class="modal-content">
+    <p id="confirm-message"></p>
+    <div class="modal-buttons">
+      <button class="modal-btn confirm" id="confirm-ok">Confirm</button>
+      <button class="modal-btn cancel" id="confirm-cancel">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- Prompt Modal -->
+<div id="prompt-modal" class="modal hidden">
+  <div class="modal-content">
+    <p id="prompt-message"></p>
+    <input type="text" id="prompt-input" class="modal-input" />
+    <div class="modal-buttons">
+      <button class="modal-btn confirm" id="prompt-ok">OK</button>
+      <button class="modal-btn cancel" id="prompt-cancel">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- Simple Modal -->
+<div id="simple-modal" class="modal hidden">
+  <div class="modal-content">
+    <p id="simple-message"></p>
+    <div class="modal-buttons">
+      <button class="modal-btn confirm" id="simple-ok">OK</button>
+    </div>
+  </div>
+</div>
+
+  <script src="/frontend/js/admin_dashboard/admin_dashboard.js" defer></script>
+</body>
+</html>

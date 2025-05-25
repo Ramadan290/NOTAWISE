@@ -1,0 +1,181 @@
+*** Development Plan ***
+-----------------------------------------------------------------------------------------------------------------
+DAY 1 : 
+
+🔵 Goal: Light setup, open everything properly
+
+- Creating main.py (FastAPI app, CORS, simple /ping route)
+
+- Creating database.py (MySQL connection file inside /core)
+
+- Testing that server + DB are running.
+
+✅ Outcome: Backend engine alive and connected to DB.
+
+-----------------------------------------------------------------------------------------------------------------
+Day 2 :
+
+🟡 Goal: Focus on database structure
+
+Create /models/ files:
+
+- user_model.py
+
+- product_model.py
+
+- order_model.py
+
+Create /schemas/ files:
+
+- auth_schema.py
+
+- product_schema.py
+
+- order_schema.py
+
+
+Relationship Explained : 
+
+A User can have many orders.
+
+A Product can appear in many orders.
+
+An Order links User → Product.
+
+
+✅ Outcome: All Models and Schemas done.
+
+-----------------------------------------------------------------------------------------------------------------
+Day 3 : 
+
+🟠 Goal: Build and Test authorization system
+
+ - Build /controllers/auth_controller.py
+
+ - Build /routes/auth_routes.py
+
+ - Build Authorization Utility (merged into auth_controller)
+
+Implement:
+
+ - Signup (hash password)
+
+ - Login (JWT token creation)
+
+ - Test authentication via Postman (sign up a user, login, get token).
+
+
+✅ Outcome: Authentication backend DONE and tested.
+
+-----------------------------------------------------------------------------------------------------------------
+
+DAY 4:
+
+🟢 Goal: Build and Test Product Module
+
+Build /controllers/product_controller.py (CRUD: upload/view/update/delete products)
+
+Build /routes/product_routes.py
+
+Connect routers inside main.py
+
+Link products to their creator using creator_id (ForeignKey → users.id)
+
+Allow only users with role creator to upload/delete products (require_role("creator"))
+
+✅ Outcome: CRUD operations sucessfully implemented 
+
+-----------------------------------------------------------------------------------------------------------------
+
+DAY 5:
+🟢 Goal: Build and Test Order Module
+
+
+ - Build /controllers/order_controller.py (create/view orders, optional delete)
+
+ - /routes/order_routes.py
+
+ - Connect routers inside main.py
+
+ - Design order-product as many-to-many using an association table (order_items)
+
+ - Add order status column (e.g., 'pending' | 'confirmed') to manage cart/checkout behavior
+
+ - Allow "add to cart" logic by keeping orders in pending state until checkout
+
+ - Add product pagination and optional sorting (e.g., /products?page=1&sort=price)
+
+✅ Outcome: Orders and Cart Logic sucessfully implemented
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+DAY 6 : 
+
+🟢 Goal: Testing all Features
+
+
+✅ 
+
+1 - Authorization 1.0 (User only side)
+
+ - Signup	        POST    /auth/signup	         Confirm new user creation       (Student) ✅
+ - Signup	        POST    /auth/signup	         Confirm new user creation       (Creator) ✅
+ - Login	        POST    /auth/login	             Confirm access + refresh tokens (Student,Creator,Admin) ✅ 
+ - Refresh Token	POST    /auth/refresh	         Use refresh token to get new access (Automatic) ✅
+ - Get current user GET     /auth/me ✅             Check current user info through acess token
+
+2 - Authorization 2.0 (Admin side)
+
+ - Creator Approval             PATCH                /admin/approve-creator/{user_id}    Grant creator access ✅
+ - Accessing Creator Dashboard  GET                  /creator/dashboard                  Enabling creator to acess specialized dashbaord after being granted creator priviliges ✅
+ 
+
+2 - Products
+
+ - Create	        POST        /products/create	                Must be creator-only   ✅
+ - Update	        PUT         /products/update/{product_id}	    Must be the owner of the product ✅
+ - View All	        GET         /products/all	                    Test pagination & sorting ✅
+ - Delete	        DELETE      /products/delete/{id}	            Confirm soft or hard delete ✅
+
+3 - Orders
+
+ - Add to Cart	    POST     /orders/add	        Must auto-create pending order ✅
+ - Checkout	        POST     /orders/checkout	    Confirm status=confirmed, total_price updates ✅
+ - View Orders	    GET     /orders/viewall	        Role-based filtering (admin exclusive) ✅
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+🟢 Goal: Testing all Features
+
+🧪 Full end-to-end backend testing:
+
+Signup / Login
+
+Product upload (by creator)
+
+Product browsing (by student)
+
+Add to cart
+
+Checkout / confirm order
+
+Role access control tested
+
+Product–Order relations verified
+
+✅ Outcome: Complete Test Coverage and ready to move on to frontend design

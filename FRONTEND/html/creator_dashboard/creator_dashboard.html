@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Creator Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/frontend/css/styles_creator_dashboard.css" />
+</head>
+<body>
+
+  <!-- Page Heading -->
+  <h1 class="section-title">Welcome, Creator!</h1>
+
+  <!-- Reset Form -->
+  <div style="text-align: center; margin-bottom: 20px;">
+    <button class="button-reset " onclick="resetForm()">➕ Reset</button>
+  </div>
+
+  <!-- Creation Form -->
+  <form id="product-form" class="creator-form">
+    <input type="hidden" id="product-id" />
+
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title" placeholder="Title" required />
+
+    <label for="description">Description</label>
+    <textarea id="description" name="description" placeholder="Enter product description..." required></textarea>
+
+    <label for="category">Category</label>
+    <input type="text" id="category" name="category" placeholder="Category" required />
+
+    <label for="price">Price ($)</label>
+    <input type="number" id="price" name="price" placeholder="e.g. 9.99" step="0.01" required />
+
+    <label for="file_link">File Link</label>
+    <input type="url" id="file_link" name="file_link" placeholder="Google Drive file link" />
+
+    <label for="image_link">Image Link (optional)</label>
+    <input type="url" id="image_link" name="image_link" placeholder="Image URL" />
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- Product Section -->
+  <div class="products-section">
+    <h2 class="section-title">Your Products</h2>
+
+    <div class="filters-bar">
+      <input type="date" id="dateFilter" onchange="loadProducts()" />
+      <select id="sortOrder" onchange="loadProducts()">
+        <option value="">Sort By</option>
+        <option value="asc">Oldest First</option>
+        <option value="desc">Newest First</option>
+      </select>
+    </div>
+
+    <p id="product-count"></p>
+
+    <!-- Product Grid -->
+    <div class="product-grid" id="product-list"></div>
+  </div>
+
+  <!-- ✅ Info Modal (OK only) -->
+  <div id="info-modal" class="modal hidden">
+    <div class="modal-content">
+      <p id="info-modal-message">Message</p>
+      <div class="modal-buttons">
+        <button id="info-modal-ok" class="modal-close-btn primary">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ⚠️ Confirm Modal (Confirm / Cancel) -->
+  <div id="confirm-modal" class="modal hidden">
+    <div class="modal-content">
+      <p id="confirm-modal-message">Are you sure?</p>
+      <div class="modal-buttons">
+        <button id="confirm-modal-cancel" class="modal-close-btn secondary">Cancel</button>
+        <button id="confirm-modal-confirm" class="modal-close-btn primary">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JS -->
+  <script src="/frontend/js/creator_dashboard/creator_dashboard.js" defer></script>
+</body>
+</html>

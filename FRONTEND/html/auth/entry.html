@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Choose Your Role</title>
+  <link rel="stylesheet" href="/frontend/css/styles.css" />
+</head>
+<body>
+  <div class="entry-container">
+    <div class="entry-card">
+      <h2>Select Your Role</h2>
+      <p class="subtitle">Are you joining as a student or a creator?</p>
+
+      <div class="role-options">
+        <label class="role-option">
+          <input type="radio" name="role" value="student" />
+          <span>Student</span>
+        </label>
+
+        <label class="role-option">
+          <input type="radio" name="role" value="creator" />
+          <span>Creator</span>
+        </label>
+      </div>
+
+      <button id="signup-btn">Continue</button>
+    </div>
+  </div>
+
+    <!-- Modal -->
+    <div id="role-modal" class="modal hidden">
+    <div class="modal-content">
+        <p>Please select a role to continue.</p>
+        <button id="close-modal" class="modal-close">OK</button>
+    </div>
+    </div>
+
+
+  <script src="/frontend/js/auth/entry.js"></script>
+</body>
+</html>

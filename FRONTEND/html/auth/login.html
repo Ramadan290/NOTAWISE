@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - NotaWise</title>
+  <link rel="stylesheet" href="/frontend/css/styles.css" />
+</head>
+<body>
+
+  <div class="auth-container">
+    <!-- Form Section -->
+    <form id="login-form" class="auth-form">
+      <h2>Login</h2>
+      <p>Don’t have an account yet? <a href="/frontend/html/auth/entry.html">Sign Up</a></p>
+
+      <label for="login-username">Username</label>
+      <input type="text" id="login-username" name="login-username" placeholder="Enter your username" required />
+
+      <label for="login-password">Password</label>
+      <input type="password" id="login-password" name="login-password" placeholder="Enter 6 characters or more" required />
+
+      <div class="remember-row">
+        <label><input type="checkbox" name="remember" /> Remember me</label>
+        <a href="#">Forgot Password?</a>
+      </div>
+
+      <button type="submit">Login</button>
+
+      <p id="login-message"></p>
+
+      <div class="social-login">
+        <p>or login with</p>
+        <div class="social-btns">
+          <button type="button">
+            <img src="/frontend/assets/google.png" alt="Google" class="social-icon" />
+            Google
+          </button>
+
+          <button type="button">
+            <img src="/frontend/assets/facebook.png" alt="Facebook" class="social-icon" />
+            Facebook
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <!-- Illustration Section -->
+    <div class="auth-illustration"></div>
+  </div>
+
+  <script src="/frontend/js/auth/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+*** API ENDPOINTS ***
+-----------------------------------------------------------------------------------------------------------------
+
+
+Authorization : 
+=================================================================================================================
+1 - Signup
+
+Endpoint: /auth/signup
+
+Body: (example)
+{
+  "username": "abdallah",
+  "email": "abdallah@gmail.com",
+  "password": "RoqZak226@"
+}
+
+-----------------------------------------------------------------------------------------------------------------
+2 - Login
+
+Type: POST
+
+Endpoint: /auth/login
+
+Body: (example)
+
+{
+  "username": "-----@gmail.com",
+  "password": "password"
+}
+
+-----------------------------------------------------------------------------------------------------------------
+
+3 - Refresh Access Token
+
+Type: POST
+
+Endpoint: /auth/refresh
+
+Body:
+{
+  "refresh_token": "<refresh token>"
+}
+
+-----------------------------------------------------------------------------------------------------------------
+
+4 - Displaying all users (admin only)
+
+Type : Get
+
+Endpoint : /auth/users/all
+
+
+NO BODY
+
+-----------------------------------------------------------------------------------------------------------------
+
+5 - Deleting a User
+
+Type : Delete
+
+Endpoint : auth//admin/delete-user/{user_id}
+
+NO BODY
+
+-----------------------------------------------------------------------------------------------------------------
+
+6 - Grant or Revoke User Role
+
+Type : PUT
+
+Endpoint :  /admin/set-role/{user_id}
+
+Body : 
+{
+  "role" : "creator" or "role" : "user" , admin privilege cant be granted 
+}
+
+
+=================================================================================================================
+
+Products : 
+
+ 1 - Creating a Product
+
+ Type : POST
+
+ Endpoint : /products/create
+
+Body : (example)
+{
+  "title": "Updated Product",
+  "description": "Flashcards with NFC",
+  "category": "Notes",
+  "price": 25.99
+}
+
+-----------------------------------------------------------------------------------------------------------------
+
+2 - Updating a Product 
+
+Type : POST
+
+Endpoint : /products/create
+
+Body : (example)
+
+{
+  "price" : 49.44
+}
+
+-----------------------------------------------------------------------------------------------------------------
+
+3 - Viewing All Products
+
+Type : GET
+
+Endpoint : /products/all
+
+NO BODY
+
+-----------------------------------------------------------------------------------------------------------------
+
+4 - Deleting a Product
+
+Type : PUT
+
+Endpoint : /products/delete/{product_id}
+
+
+NO BODY
+
+-----------------------------------------------------------------------------------------------------------------
+
+==================================================================================================================
+
+Orders : 
+
+
+1 - Adding Items to Cart 
+
+Type : POST
+
+Endpoint : /orders/add
+
+Body : 
+
+{
+  "product_id": 2,
+  "quantity": 1
+}
+
+-----------------------------------------------------------------------------------------------------------------
+
+2 - Checkout
+
+Type : POST
+
+Endpoint : /orders/checkout
+
+
+NO BODY (Depends on existing cart )
+
+-----------------------------------------------------------------------------------------------------------------\
+
+3 - View All
+
+TYPE : GET
+
+Endpoint : /orders/viewall
+
+NO BODY this is a get method
