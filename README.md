@@ -42,6 +42,18 @@
 └── templates/ # HTML pages and static assets
 
 
+## Preview :
+![image](https://github.com/user-attachments/assets/a046f689-99ea-4237-bb5e-ab5cf2ddc5aa)
+![image](https://github.com/user-attachments/assets/1d91c046-be4c-4bdc-a84a-cc61c89f1eef)
+![image](https://github.com/user-attachments/assets/e3ac0ee6-985f-4f98-8769-14d0cc312f02)
+![image](https://github.com/user-attachments/assets/573ddeda-13cf-46eb-8f07-3dae42b08b4a)
+![image](https://github.com/user-attachments/assets/bc9d5fa3-7aa2-480f-9b9a-71e98208c7d2)
+![image](https://github.com/user-attachments/assets/02f2a1d0-b38c-42ad-85a9-ae6e924950fe)
+![image](https://github.com/user-attachments/assets/246017ae-2ba7-414d-ae4c-13aea1493134)
+![image](https://github.com/user-attachments/assets/8d24fb07-be25-4963-bc5f-062c16cc9d10)
+![image](https://github.com/user-attachments/assets/5671cac4-5dad-4d90-b7f8-de945f7ad6ac)
+![image](https://github.com/user-attachments/assets/75f9432b-427d-4ab9-91bb-e94ceeed54e0)
+
 
 ---
 
