@@ -73,7 +73,7 @@ pip install -r requirements.txt
 
 
 DATABASE_URL=mysql://username:password@localhost/notawise_db
-SECRET_KEY=your_jwt_secret_key
+SECRET_KEY=your_jwt_secret_keyy
 
 
 uvicorn app.main:app --reload
